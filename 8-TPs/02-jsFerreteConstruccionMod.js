@@ -6,16 +6,18 @@ C.	Para hacer un contrapiso de 1m x 1m se necesitan 2 bolsas de cemento y 3 de c
 
 function Rectangulo () 
 {
- let largo;
- let ancho;
- let perimetro;
- let cantidadTotal;
+let largo;
+let ancho;
+let perimetro;
+let numeroDeVueltas;
+let cantidadTotal;
 
 largo= parseInt(document.getElementById("txtIdLargo").value) ;
 ancho=parseInt(document.getElementById("txtIdAncho").value);
+numeroDeVueltas=parseInt(document.getElementById("txtIdVueltas").value);
 perimetro= (largo+ancho) *2;
 
-cantidadTotal= perimetro *3;
+cantidadTotal= numeroDeVueltas*perimetro;
 alert(`La cant de alambre a comprar son ${cantidadTotal} metros`);
 
 }
@@ -23,11 +25,14 @@ alert(`La cant de alambre a comprar son ${cantidadTotal} metros`);
 function Circulo () 
 {
 let radio;
+let numeroDeVueltas;
 let perimetro;
 let cantidadTotal;
-radio=parseInt(document.getElementById("txtIdRadio").value);
+radio=parseInt(document.getElementById("txtIdaRadio").value);
+largo= parseInt(document.getElementById("txtIdLargo").value) ;
+numeroDeVueltas=parseInt(document.getElementById("txtIdVueltas").value);
 perimetro= (3,14* radio*2);
-cantidadTotal= perimetro *3;
+cantidadTotal= perimetro*numeroDeVueltas;
 alert(`La cantidad de alambre a comprar son ${cantidadTotal} metros`);
 
 	
