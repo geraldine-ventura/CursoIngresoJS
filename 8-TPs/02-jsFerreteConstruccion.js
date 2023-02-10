@@ -22,15 +22,15 @@ alert(`La cant de alambre a comprar son ${cantidadTotal} metros`);
 
 function Circulo () 
 {
-let radio;
-let perimetro;
-let cantidadTotal;
-radio=parseInt(document.getElementById("txtIdRadio").value);
-perimetro= (3,14* radio*2);
-cantidadTotal= perimetro *3;
-alert(`La cantidad de alambre a comprar son ${cantidadTotal} metros`);
+    let radio;
+    let perimetro;
+    let cantidadTotal;
+    radio=parseInt(document.getElementById("txtIdRadio").value);
+    perimetro= (3,14* radio*2);
+    cantidadTotal= perimetro *3;
+    alert(`La cantidad de alambre a comprar son ${cantidadTotal} metros`);
 
-	
+
 }
 function Materiales () 
 {
