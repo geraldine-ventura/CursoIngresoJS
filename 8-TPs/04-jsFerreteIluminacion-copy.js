@@ -34,7 +34,7 @@ function CalcularPrecio() {
         descuento = 0.5;
     }
     else {
-        if (cantidadDeLamparas == 5) {
+        if (cantidadDeLamparas == 5) {``
             if (marcaDeLampara == "ArgentinaLuz") {
                 descuento = 0.4;
             }
