@@ -22,52 +22,47 @@ function CalcularPrecio() {
     let impuesto;
 
     PRECIO_lAMPARA = 35;
-    descuento=0;
+    descuento = 0;
     marcaDeLampara = document.getElementById("Marca").value;
     cantidadDeLamparas = parseInt(document.getElementById("txtIdCantidad").value);
 
-    if (cantidadDeLamparas > 5) {
-        descuento = 0.5;
-    }
+    switch (cantidadDeLamparas) {
 
-    else if (cantidadDeLamparas == 5) {
+        case 1:
+        case 2:
+            break;
+
+
+        case 4:
+            if (marcaDeLampara == "ArgentinaLuz" || marcaDeLampara == "FelipeLamparas") {
+                descuento = 0.25;
+            }
+            else {
+                descuento = 0.2;
+            }
+            break;
+
+        case 5:
             if (marcaDeLampara == "ArgentinaLuz") {
                 descuento = 0.4;
             }
             else {
                 descuento = 0.3;
             }
-        }
+            break;
 
-    else if (cantidadDeLamparas == 3) {
-            if (marcaDeLampara == "ArgentinaLuz") {
-                descuento = 0.15;
-            }
-            if (marcaDeLampara == "FelipeLuz") {
-                descuento = 0.10;
-            }
-            else {
-                descuento = 0.05;
-            }
-        }
+        default:
+            descuento = 0.5;
+    }
 
-    else if (cantidadDeLamparas == 4) {
-            if (marcaDeLampara == "ArgentinaLuz" || marcaDeLampara == "FelipeLuz"){
-                descuento = 0.25;
-            }
-            else {
-                descuento = 0.20;
-            }
-        }
-    
     precioNeto = cantidadDeLamparas * PRECIO_lAMPARA;
     descuento = precioNeto * descuento;
     precioFinal = precioNeto - descuento;
     document.getElementById("txtIdprecioDescuento").value = precioFinal;
-                
+
     if (precioFinal > 120) {
-        impuesto = precioNeto * 0.1;
-        precioIngresosBrutos = precioFinal + impuesto;
+        let impuesto = precioNeto * 0.1;
+        let precioIngresosBrutos = precioFinal + impuesto;
         alert(`Usted pago $ ${precioIngresosBrutos}de IIBB.”, siendo $ ${impuesto} el impuesto que se pagó. `);
-        }
+    }
 }
