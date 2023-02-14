@@ -30,34 +30,34 @@ function CalcularPrecio() {
     if (cantidadDeLamparas > 5) {
         descuento = 0.5;
     }
-
-    if (cantidadDeLamparas == 5) {
-        if (marcaDeLampara == "ArgentinaLuz") {
+    switch (marcaDeLampara) {
+        case "ArgentinaLuz":
             descuento = 0.4;
-        }
-        else {
+        default:
             descuento = 0.3;
-        }
+            break;
     }
-
     if (cantidadDeLamparas == 4) {
-        if (marcaDeLampara == "ArgentinaLuz" || marcaDeLampara == "FelipeLuz")
-            descuento = 0.25;
-        else
-            descuento = 0.20;
-    }
-
-    if (cantidadDeLamparas == 3) {
-        if (marcaDeLampara == "ArgentinaLuz") {
-            descuento = 0.15;
+        switch (marcaDeLampara) {
+            case "ArgentinaLuz":
+            case "FelipeLuz":
+                descuento = 0.25;
+                break;
+            default:
+                descuento = 0.2;
+                break;
         }
-        else {
-            if (marcaDeLampara == "FelipeLuz") {
+    }
+    if (cantidadDeLamparas == 3) {
+        switch (marcaDeLampara) {
+            case "ArgentinaLuz":
+                descuento = 0.15;
+            case "FelipeLuz":
                 descuento = 0.10;
-            }
-            else {
+            default:
                 descuento = 0.05;
-            }
+                break;
+
         }
     }
 
@@ -72,3 +72,4 @@ function CalcularPrecio() {
         alert(`Usted pago $ ${precioIngresosBrutos.toFixed(2)}de IIBB.”, siendo $ ${impuesto.toFixed(2)} el impuesto que se pagó. `);
     }
 }
+

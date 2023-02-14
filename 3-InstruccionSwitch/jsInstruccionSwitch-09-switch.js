@@ -33,33 +33,42 @@ function mostrar() {
 
 	switch (estacion) {
 		case "Invierno":
-			if (destino == "Bariloche") {
-				descuento = 0.20;
-			}
-			else if (destino == "Mar del plata") {
-				descuento = 0.20;
-			}
-			else {
-				descuento = 0.10;
-			}
-			break;
+			switch (destino) {
+				case "Bariloche":
+					aumento = 0.2;
+					break;
 
-		case "Verano":
-			if (destino == "Bariloche") {
-				descuento = 0.20;
-			}
-			else if (destino == "Mar del plata") {
-				aumento = 0.20;
-			}
-			else {
-				aumento = 0.10;
+				case "Mar del plata":
+					descuento = 0.2;
+					break;
+
+				default:
+					descuento = 0.1;
 			}
 			break;
 
 		case "Otoño":
 		case "Primavera":
-			if (destino != "Cordoba") {
-				aumento = 0.10;
+			switch (destino) {
+				case "Bariloche":
+				case "Cataratas":
+				case "Mar del plata":
+					aumento = 0.1;
+			}//NO INCLUYO break PORQUE QUIERO QUE CONTINUE CON "Otoño".
+			break;
+
+		case "Verano":
+			switch (destino) {
+				case "Bariloche":
+					descuento = 0.2;
+					break;
+
+				case "Mar del plata":
+					aumento = 0.2;
+					break;
+
+				default:
+					aumento = 0.1;
 			}
 			break;
 	}

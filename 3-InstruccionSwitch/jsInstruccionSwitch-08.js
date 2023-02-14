@@ -1,6 +1,30 @@
+// Enunciado:
+// Al seleccionar un destino informar si hace FRIO o CALOR en ese destino
 function mostrar()
-{
-	var destinoIngresado =txtIdDestino.value;
-	alert(destinoIngresado);
+{let destino;
 
-}//FIN DE LA FUNCIÓN
+	destino= document.getElementById("txtIdDestino").value ;
+
+	switch (destino) {
+		case "Cataratas":
+			alert("calor");
+			break;
+
+		case "Bariloche":
+			alert("frio");
+			break;
+
+		case "Mar del plata":
+			alert("calor");
+			break;
+
+		case "Ushuaia":
+			alert("frio");
+			break;
+
+		default:
+	}
+
+	
+}//FIN DE LA FUNCIÓNvar destinoIngresado =txtIdDestino.value;
+
