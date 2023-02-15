@@ -30,30 +30,35 @@ function CalcularPrecio() {
     if (cantidadDeLamparas > 5) {
         descuento = 0.5;
     }
-    switch (marcaDeLampara) {
-        case "ArgentinaLuz":
-            descuento = 0.4;
-        default:
-            descuento = 0.3;
-            break;
+    else if (cantidadDeLamparas == 5) {
+        switch (marcaDeLampara) {
+            case "ArgentinaLuz":
+                descuento = 0.4;
+
+            default:
+                descuento = 0.3;
+                break;
+        }
     }
-    if (cantidadDeLamparas == 4) {
+    else if (cantidadDeLamparas == 4) {
         switch (marcaDeLampara) {
             case "ArgentinaLuz":
             case "FelipeLuz":
                 descuento = 0.25;
                 break;
+
             default:
                 descuento = 0.2;
                 break;
         }
     }
-    if (cantidadDeLamparas == 3) {
+    else if (cantidadDeLamparas == 3) {
         switch (marcaDeLampara) {
             case "ArgentinaLuz":
                 descuento = 0.15;
             case "FelipeLuz":
                 descuento = 0.10;
+
             default:
                 descuento = 0.05;
                 break;
@@ -61,15 +66,15 @@ function CalcularPrecio() {
         }
     }
 
-    descuento = precioNeto * descuento;
-    precioFinal = precioNeto - descuento;
+descuento = precioNeto * descuento;
+precioFinal = precioNeto - descuento;
 
-    document.getElementById("txtIdprecioDescuento").value = precioFinal;
+document.getElementById("txtIdprecioDescuento").value = precioFinal;
 
-    if (precioFinal > 120) {
-        impuesto = precioNeto * 0.1;
-        precioIngresosBrutos = precioFinal + impuesto;
-        alert(`Usted pago $ ${precioIngresosBrutos.toFixed(2)}de IIBB.”, siendo $ ${impuesto.toFixed(2)} el impuesto que se pagó. `);
-    }
+if (precioFinal > 120) {
+    impuesto = precioNeto * 0.1;
+    precioIngresosBrutos = precioFinal + impuesto;
+    alert(`Usted pago $ ${precioIngresosBrutos.toFixed(2)}de IIBB.”, siendo $ ${impuesto.toFixed(2)} el impuesto que se pagó. `);
+}
 }
 

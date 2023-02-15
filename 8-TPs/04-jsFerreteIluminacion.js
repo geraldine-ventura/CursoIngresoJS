@@ -30,45 +30,48 @@ function CalcularPrecio() {
     if (cantidadDeLamparas > 5) {
         descuento = 0.5;
     }
-
-    if (cantidadDeLamparas == 5) {
-        if (marcaDeLampara == "ArgentinaLuz") {
-            descuento = 0.4;
-        }
-        else {
-            descuento = 0.3;
-        }
-    }
-
-    if (cantidadDeLamparas == 4) {
-        if (marcaDeLampara == "ArgentinaLuz" || marcaDeLampara == "FelipeLuz")
-            descuento = 0.25;
-        else
-            descuento = 0.20;
-    }
-
-    if (cantidadDeLamparas == 3) {
-        if (marcaDeLampara == "ArgentinaLuz") {
-            descuento = 0.15;
-        }
-        else {
-            if (marcaDeLampara == "FelipeLuz") {
-                descuento = 0.10;
+    else {
+        if (cantidadDeLamparas == 5) {
+            if (marcaDeLampara == "ArgentinaLuz") {
+                descuento = 0.4;
             }
             else {
-                descuento = 0.05;
+                descuento = 0.3;
             }
         }
-    }
+        else {
+            if (cantidadDeLamparas == 4) {
+                if (marcaDeLampara == "ArgentinaLuz" || marcaDeLampara == "FelipeLamparas")
+                    descuento = 0.25;
+                else
+                    descuento = 0.20;
+            }
+            else {
+                if (cantidadDeLamparas == 3) {
+                    if (marcaDeLampara == "ArgentinaLuz") {
+                        descuento = 0.15;
+                    }
+                    else {
+                        if (marcaDeLampara == "FelipeLuz") {
+                            descuento = 0.10;
+                        }
+                        else {
+                            descuento = 0.05;
+                        }
+                    }
+                }
+            }
+        }
 
-    descuento = precioNeto * descuento;
-    precioFinal = precioNeto - descuento;
+        descuento = precioNeto * descuento;
+        precioFinal = precioNeto - descuento;
 
-    document.getElementById("txtIdprecioDescuento").value = precioFinal;
+        document.getElementById("txtIdprecioDescuento").value = precioFinal;
 
-    if (precioFinal > 120) {
-        impuesto = precioNeto * 0.1;
-        precioIngresosBrutos = precioFinal + impuesto;
-        alert(`Usted pago $ ${precioIngresosBrutos.toFixed(2)}de IIBB.”, siendo $ ${impuesto.toFixed(2)} el impuesto que se pagó. `);
+        if (precioFinal > 120) {
+            impuesto = precioNeto * 0.1;
+            precioIngresosBrutos = precioFinal + impuesto;
+            alert(`Usted pago $ ${precioIngresosBrutos.toFixed(2)}de IIBB.”, siendo $ ${impuesto.toFixed(2)} el impuesto que se pagó. `);
+        }
     }
 }

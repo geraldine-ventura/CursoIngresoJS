@@ -13,6 +13,7 @@ function mostrar() {
 		case 11:
 			alert("Es de mañana.");
 			break;
+		
 		default:
 			alert("NO Es de mañana.");
 
