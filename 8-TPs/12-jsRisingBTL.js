@@ -13,66 +13,79 @@ function ComenzarIngreso() {
 	let edadIngresada;
 	let sexoIngresado;
 	let estadoCivilIngresado;
-	let soltero;
-	let casado;
-	let divorciado;
-	let viudo;
 	let sueldoBruto;
 	let NúmeroDeLegajo;
 	let Nacionalidad;
-	let Argentino;
-	let Extranjeros;
-	let Nacionalizado;
 
+	edadIngresada = parseInt(prompt("ingrese edad ente 18 y 90 inclusive"));
 	while (!(edadIngresada > 17 && edadIngresada < 91)) {
-		edadIngresada = parseInt(prompt("ingrese edad ente 18 y 90 inclusive"));
+		edadIngresada = parseInt(prompt("edad fuera del rango, vuelva a ingresar"))
 	}
+	console.log(edadIngresada);
+
 	while (sexoIngresado != "m" && sexoIngresado != "f") {
 		sexoIngresado = prompt("ingrese sexo “M” para masculino y “F” para femenino").toLowerCase();
+	}
+	if (sexoIngresado == "f") {
+		sexoIngresado = "femenino";
+		console.log("femenino");
+	}
+	else {
+		console.log("masculino");
+		sexoIngresado = "masculino";
 
-		if (sexoIngresado == "f")
-			alert("femenino");
-
-		else
-			alert("masculino");
 	}
 
-	
-
+	estadoCivilIngresado = parseInt(prompt("ingrese Estado civil: 1-para soltero, 2-para casados, 3-para divorciados y 4-para viudos"));
 	switch (estadoCivilIngresado) {
 		case 1:
-			alert(soltero);
+			estadoCivilIngresado = "soltero";
+			console.log(estadoCivilIngresado);
+			break;
 		case 2:
-			alert(casado);
+			estadoCivilIngresado = "casado";
+			console.log(estadoCivilIngresado);
+			break;
 		case 3:
-			alert(divorciado);
+			estadoCivilIngresado = "divorciado";
+			console.log(estadoCivilIngresado);
+			break;
 		case 4:
-			alert(viudo);
-			estadoCivilIngresado = parseInt(prompt("ingrese Estado civil: 1-para soltero, 2-para casados, 3-para divorciados y 4-para viudos"));
+			estadoCivilIngresado = "viudo";
+			console.log(estadoCivilIngresado);
 			break;
 		default:
 
 	}
-
-	while (sueldoBruto > 8001) {
-		sueldoBruto = parseInt(prompt("ingrese sueldo bruto, no menor a 8000."));
-		alert(sueldoBruto);
+	sueldoBruto = parseInt(prompt("ingrese sueldo bruto, no menor a 8000."));//este mensaje con el prompt ,solo se visualiza una sola vez
+	while (!(sueldoBruto > 7999)) {
+		sueldoBruto = parseInt(prompt("el sueldo es inferior al pedido, ingreselo nuevamente"));
 	}
+	console.log(sueldoBruto);
+
+	NúmeroDeLegajo = parseInt(prompt("ingrese Número de legajo, numérico de 4 cifras, sin ceros a la izquierda"));
 	while (!(NúmeroDeLegajo > 999 && NúmeroDeLegajo < 9999)) {
-		NúmeroDeLegajo = parseInt(prompt("ingrese Número de legajo, numérico de 4 cifras, sin ceros a la izquierda"));
-		alert(NúmeroDeLegajo);
-	}
-	switch (Nacionalidad) {
-		case "A": 
-			alert(Argentino);
-		case "E": 
-			alert(Extranjeros);
-		case "N": 
-			alert(Nacionalizado);
 
-			Nacionalidad= prompt("ingrese Nacionalidad: “A” para argentinos, “E” para extranjeros, “N” para nacionalizados").toLowerCase();
+		NúmeroDeLegajo = parseInt(prompt("legajo inexistente, ingrese nuevamente"));
+	}
+	console.log(NúmeroDeLegajo);
+
+	Nacionalidad = prompt("ingrese Nacionalidad: “A” para argentinos, “E” para extranjeros, “N” para nacionalizados").toUpperCase();
+	switch (Nacionalidad) {
+		case "A":
+			Nacionalidad = "Argentino";
+			console.log(Nacionalidad);
+			break;
+		case "E":
+			Nacionalidad = "Extranjero";
+			console.log(Nacionalidad);
+			break;
+		case "N":
+			Nacionalidad = "Nacionalizado";
+			console.log(Nacionalidad);
 			break;
 		default:
+
 	}
 
 	document.getElementById("txtIdEdad").value = edadIngresada;
