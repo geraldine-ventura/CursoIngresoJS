@@ -18,13 +18,15 @@ function ComenzarIngreso() {
 	let Nacionalidad;
 
 	edadIngresada = parseInt(prompt("ingrese edad ente 18 y 90 inclusive"));
-	while (!(edadIngresada > 17 && edadIngresada < 91)) {
-		edadIngresada = parseInt(prompt("edad fuera del rango, vuelva a ingresar"))
+	while (isNaN(NúmeroDeLegajo) && !(edadIngresada > 17 && edadIngresada < 91)) {
+		edadIngresada = parseInt(prompt("edad incorrecta, vuelva a ingresar"))
 	}
 	console.log(edadIngresada);
 
-	while (sexoIngresado != "m" && sexoIngresado != "f") {
-		sexoIngresado = prompt("ingrese sexo “M” para masculino y “F” para femenino").toLowerCase();
+	sexoIngresado = prompt("ingrese sexo “M” para masculino y “F” para femenino").toLowerCase();
+	//
+	while (!isNaN(sexoIngresado)|| (sexoIngresado != "m" && sexoIngresado != "f")) {//ver parentesis cambia sintaxis
+		sexoIngresado = prompt("sexo incorrecto, ingrese nuevamente").toLowerCase();
 	}
 	if (sexoIngresado == "f") {
 		sexoIngresado = "femenino";
@@ -58,14 +60,14 @@ function ComenzarIngreso() {
 
 	}
 	sueldoBruto = parseInt(prompt("ingrese sueldo bruto, no menor a 8000."));//este mensaje con el prompt ,solo se visualiza una sola vez
-	while (!(sueldoBruto > 7999)) {
+	while (isNaN(NúmeroDeLegajo) && !(sueldoBruto > 7999)) {
 		sueldoBruto = parseInt(prompt("el sueldo es inferior al pedido, ingreselo nuevamente"));
 	}
 	console.log(sueldoBruto);
 
 	NúmeroDeLegajo = parseInt(prompt("ingrese Número de legajo, numérico de 4 cifras, sin ceros a la izquierda"));
-	while (!(NúmeroDeLegajo > 999 && NúmeroDeLegajo < 9999)) {
-
+	while (isNaN(NúmeroDeLegajo) && !(NúmeroDeLegajo > 999 && NúmeroDeLegajo < 9999)) {
+		//(isNaN(NúmeroDeLegajo== true )) 
 		NúmeroDeLegajo = parseInt(prompt("legajo inexistente, ingrese nuevamente"));
 	}
 	console.log(NúmeroDeLegajo);
