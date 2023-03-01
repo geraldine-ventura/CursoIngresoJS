@@ -14,7 +14,7 @@ function mostrar() {
 			sumaPositivos += numeroIngresado;
 		}
 		else {
-			false = 1;
+			false = 1;//ver?
 			multiplicacionNegativos *= numeroIngresado;
 		}
 		seguir = prompt("¿quiere ingresar otro numero");
