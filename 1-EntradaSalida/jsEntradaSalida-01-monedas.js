@@ -24,12 +24,8 @@ function mostrar() {
     const BTC = 'BTC';
     const ETH = 'ETH';
     let nombreDeLaMoneda;
-    let nombreDeLaMonedaMayorCotizacion;
     let nombreDeLaMonedaMasMinada;
     let cantidadDeLaMonedaMinada;
-
-    //let totalAcumuladoBtc;
-    //let totalAcumuladoEth;
 
     let cantidadBtc = 0;
     let cantidadEth = 0;
@@ -45,6 +41,7 @@ function mostrar() {
 
     let flagCotizacionMoneda = 0;
     let flagCant = 0;
+
     let acumulador = 0;
 
     do {
@@ -59,7 +56,7 @@ function mostrar() {
 
 
             /* D) Sabiendo que el coste de electricidad para:
-    BTC es de un 7% y para ETH es un 4% calcular el ingreso total neto en USD. */
+            BTC es de un 7% y para ETH es un 4% calcular el ingreso total neto en USD. */
             costeElectricidad = ingresoBrutoDolar * 0.07;
             ingresoTotalNetoDolar = (ingresoBrutoDolar - costeElectricidad);// en dolar
             //E) Convertir el ingreso neto en ARS solo para ETH.
@@ -73,11 +70,12 @@ function mostrar() {
                 flagCant = 1;
             }
         }
+
         else if (nombreDeLaMoneda == "ETH") {
             cantidadEth = parseFloat(prompt("ingrese cantidad de de ETH"));
             ingresoBrutoDolar = cotizacionDiaria * cantidadEth;
             /* D) Sabiendo que el coste de electricidad para:
-BTC es de un 7% y para ETH es un 4% calcular el ingreso total neto en USD. */
+            BTC es de un 7% y para ETH es un 4% calcular el ingreso total neto en USD. */
             costeElectricidad = ingresoBrutoDolar * 0.04;
             ingresoTotalNetoDolar = (ingresoBrutoDolar - costeElectricidad);// en dolar
             //E) Convertir el ingreso neto en ARS solo para ETH.
@@ -99,11 +97,6 @@ BTC es de un 7% y para ETH es un 4% calcular el ingreso total neto en USD. */
             flagCotizacionMoneda = 1;
         }
 
-
-
-        ///////
-
-
         seguir = prompt("indique  SI , si desea seguir ingresando mas monedas").toLowerCase();
 
     }
@@ -112,7 +105,7 @@ BTC es de un 7% y para ETH es un 4% calcular el ingreso total neto en USD. */
     if (ingresoTotalNetoPesos > 100000) {//en pesos ARS
         afip = ingresoTotalNetoPesos * 0.21;
         mensaje = ("El ingreso neto por ETH es de $ " + ingresoTotalNetoPesos + " en pesos, y se descontó $ " + afip + " pesos de AFIP.");
-    alert(mensaje);
+        alert(mensaje);
     }
 
 }
