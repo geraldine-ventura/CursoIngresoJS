@@ -16,26 +16,28 @@ B)Cual fue el promedio de compra por tipo de hamburguesa.
 
 C)El nombre y apellido de la persona que realizó la compra más barata. */
 
-	
+
 function mostrar() {
 	let hamburguesaMasComprada;
+
 	let promedioCompraHamburguesaSimple;
 	let promedioCompraHamburguesaDoble;
 	let promedioCompraHamburguesaVeggie;
+
 	let nombreCompraMasBarata;
 
-	let totalSimple = 0;
+	let totalSimple = 0;//se refiere a "cant todal simple" acumulada
 	let totalVeggie = 0;
 	let totalDoble = 0;
+
 	let compraMasBarata = 0;
 
 	let banderaTerminar = false;
 
-
 	do {
 		let nombre = prompt("Nombre");
 		let apellido = prompt("Apellido");
-		let edad = prompt("edad");
+		let edad = parseInt(prompt("edad"));
 
 		let tipoHamburguesa = prompt("Tipo hamburguesa").toLowerCase();
 		let cantidadHamburguesas = parseInt(prompt("Cantidad"));
@@ -44,7 +46,7 @@ function mostrar() {
 			hamburguesaMasComprada = tipoHamburguesa;
 		}
 
-
+		//C)El nombre y apellido de la persona que realizó la compra más barata.
 		switch (tipoHamburguesa) {
 			case "simple":
 				const valorSimple = 125;
@@ -52,20 +54,21 @@ function mostrar() {
 				const valorTotalCompraSimple = cantidadHamburguesas * valorSimple;
 
 				if (valorTotalCompraSimple < compraMasBarata) {
-					nombreCompraMasBarata = nombre + ' ' + apellido;
-					compraMasBarata = valorTotalCompraSimple;
+					compraMasBarata = valorTotalCompraSimple;//cambie de orden de linea(subi)
+					nombreCompraMasBarata = nombre + " " + apellido;
 				}
-
 				break;
+
 			case "doble":
 				const valorDoble = 185;
 				totalDoble += cantidadHamburguesas;
 				const valorTotalCompraDoble = cantidadHamburguesas * valorDoble;
 
 				if (valorTotalCompraDoble < compraMasBarata) {
-					nombreCompraMasBarata = nombre + ' ' + apellido;
 					compraMasBarata = valorTotalCompraDoble;
+					nombreCompraMasBarata = nombre + " " + apellido;
 				}
+
 				break;
 			case "veggie":
 				const valorVeggie = 185;
@@ -73,14 +76,19 @@ function mostrar() {
 				const valorTotalCompraVeggie = cantidadHamburguesas * valorVeggie;
 
 				if (valorTotalCompraVeggie < compraMasBarata) {
-					nombreCompraMasBarata = nombre + ' ' + apellido;
 					compraMasBarata = valorTotalCompraVeggie;
+					nombreCompraMasBarata = nombre + " " + apellido;
 				}
 				break;
 		}
-		
+
+		if (prompt("desea salir? ingrese salir ").toLowerCase() == "salir")
+			banderaTerminar = true;//ƒsolo falto un promp para la bandera
+
+
 	} while (!banderaTerminar);
 
+	//A)Cuál fue el tipo de hamburguesa más comprada.
 	if (totalSimple > totalDoble && totalSimple > totalVeggie)
 		hamburguesaMasComprada = "simple";
 
@@ -90,8 +98,14 @@ function mostrar() {
 	if (totalVeggie > totalSimple && totalVeggie > totalDoble)
 		hamburguesaMasComprada = "veggie";
 
+	//B)Cual fue el promedio de compra por tipo de hamburguesa.
 
-	promedioCompraHamburguesaSimple = totalSimple / cantidadHamburguesas;
-	promedioCompraHamburguesaDoble = totalDoble / cantidadHamburguesas;
-	promedioCompraHamburguesaVeggie = totalVeggie / cantidadHamburguesas;
+	//me olvid el let , promedio del total de cantid de hamburguesa
+	let totalHamburguesasVendidas = totalSimple + totalDoble + totalVeggie;
+
+	promedioCompraHamburguesaSimple = totalSimple / totalHamburguesasVendidas;
+	promedioCompraHamburguesaDoble = totalDoble / totalHamburguesasVendidas;
+	promedioCompraHamburguesaVeggie = totalVeggie / totalHamburguesasVendidas;
+
+	//promedioCompraHamburguesaSimple = totalSimple / cantidadHamburguesas;
 }

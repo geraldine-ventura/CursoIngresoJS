@@ -40,7 +40,7 @@ function mostrar() {
 
 	let banderaSeguir = true;
 
-	for (let i = 0; i < 6 && banderaSeguir; i++) {
+	for (let i = 0; i < 5 && banderaSeguir; i++) {
 
 		tamano = prompt("Tamaño");//Tamaño de la mascota(Chica, Mediana o Grande).
 		sexo = prompt("sexo");//Sexo de la mascota(Hembra o Macho).
