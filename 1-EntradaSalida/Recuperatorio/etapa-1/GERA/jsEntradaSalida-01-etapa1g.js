@@ -1,4 +1,4 @@
-/* Enunciado 1
+/* Enunciado 1..s
 
 
 En una hamburguesería el cajero debe ir cargando los pedidos de los clientes.
