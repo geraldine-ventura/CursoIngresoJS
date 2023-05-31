@@ -1,8 +1,11 @@
-function mostrar()
-{
+//al presionar el botón pedir la cantidad de veces que quiero repetir el mensaje "Hola UTN FRA"
 
-	var repetciones = prompt("ingrese el número de repeticiones");
-	alert("ok");
+function mostrar() {
 
+	let repeticiones = parseInt(prompt("ingrese cant repeticiones: "));
+	for (let i = 1; i <= repeticiones; i++) {
 
-}//FIN DE LA FUNCIÓN
+		console.log(i + " Hola  UTN-FRA");
+
+	}
+}
