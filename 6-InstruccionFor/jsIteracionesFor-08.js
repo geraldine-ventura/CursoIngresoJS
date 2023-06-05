@@ -6,12 +6,11 @@ function mostrar() {
 	let contadorDiv;
 
 	numero = parseInt(prompt("ingrese un num para evaluar si es primo: "));
-
 	while (isNaN(numero)) {//validacion
 		numero = parseInt(prompt("Eso no es un num, ingrse un num: "));
 	}
 
-	for (let i = 2; i < numero; i++) {//restrinjo : todos los num primos son divisibles por 1 y por si mismo,
+	for (let i = 2; i <= numero; i++) {//restrinjo : todos los num primos son divisibles por 1 y por si mismo,
 
 
 		if (numero % i == 0) {// evaluo: es decir q si tiene algun divisor es primo

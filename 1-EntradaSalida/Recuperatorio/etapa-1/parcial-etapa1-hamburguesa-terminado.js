@@ -51,7 +51,6 @@ function mostrar() {
 
 
 	let compraMasBarata = 0;
-	let flagContador = 0;
 	let flagCompraMasBarata = 0;
 
 	do {
@@ -67,6 +66,7 @@ function mostrar() {
 
 		cantidadHamburguesas = parseInt(prompt("Ingrese cantidad: "));
 		while ((isNaN(cantidadHamburguesas)) || (cantidadHamburguesas < 0)) {
+
 			cantidadHamburguesas = parseInt(prompt("ERROR>>> Ingrese cantidad: "));
 		}
 
@@ -83,6 +83,7 @@ function mostrar() {
 					compraMasBarata = totalCompraSimple;
 					nombreCompraMasBarata = nombre;
 					apellidoCompraMasBarata = apellido;
+
 					flagCompraMasBarata = 1;
 				}
 				break;
@@ -98,6 +99,7 @@ function mostrar() {
 					compraMasBarata = totalCompraDoble;
 					nombreCompraMasBarata = nombre;
 					apellidoCompraMasBarata = apellido;
+
 					flagCompraMasBarata = 1;
 				}
 
@@ -114,6 +116,7 @@ function mostrar() {
 					compraMasBarata = totalCompraVeggie;
 					nombreCompraMasBarata = nombre;
 					apellidoCompraMasBarata = apellido;
+
 					flagCompraMasBarata = 1;
 				}
 
