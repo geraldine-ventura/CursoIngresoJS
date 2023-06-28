@@ -50,7 +50,7 @@ function mostrar() {
 
 		if (tipo == "perro") {
 			cantidadPerros++;
-			edadesTotales += edad;//edades totales para perros (*****esto lo movi de abajo )
+			edadesTotales += edad;//edades totales para perros para cal promedio (*****esto lo movi de abajo )
 		}
 		else if (tipo == "gato") {
 			cantidadGatos++;
